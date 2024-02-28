@@ -7,7 +7,8 @@ yes | sudo apt install wget && \\
 yes | sudo apt install curl && \\
 yes | sudo apt install snap && \\
 yes | sudo apt install neofetch && \\
-yes | sudo apt install nodejs 
+curl -fsSL https://deb.nodesource.com/setup_21.x | sudo -E bash - &&\
+sudo apt-get install -y nodejs
 
 echo "requirements installed"
 
@@ -28,7 +29,7 @@ echo "Installing git"
 yes | sudo apt install git && \\
 git config --global user.name Kenneth && \\ 
 git config --global user.email kblack0610@gmail.com
-#git config --global credential.helper store
+git config --global credential.helper store
 
 if ! test -f ~/.ssh/id_ed25519; then
 	echo "git ssh doesn't exists, downloading"
@@ -43,6 +44,7 @@ echo "Installing bash requirements"
 #bash requirements
 yes | sudo apt install cowsay && \\
 yes | sudo apt install fortune && \\
+yes | sudo apt install feh && \\
 
 echo "Installing kitty"
 
